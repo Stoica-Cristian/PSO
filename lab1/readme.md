@@ -51,3 +51,5 @@ gcc -shared source1_shared.o source2_shared.o ... -o mylibrary.so
 
 # linkare executabil cu biblioteca
 gcc main.c -o main_shared -lmymath -L .
+
+# Exercitiu 3
