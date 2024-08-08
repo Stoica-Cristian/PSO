@@ -44,12 +44,18 @@ error: /usr/bin/ld: cannot find -lc: No such file or directory
 
 # Exercitiu 2
 
-# creare bibliotecă
+--creare bibliotecă
 gcc -fPIC -c source1.c -o source1_shared.o
 
 gcc -shared source1_shared.o source2_shared.o ... -o mylibrary.so
 
-# linkare executabil cu biblioteca
+--linkare executabil cu biblioteca
 gcc main.c -o main_shared -lmymath -L .
 
-# Exercitiu 3
+# Exercitiu 5
+
+dynamic lib:
+    LD_LIBRARY_PATH=. ./demo (your_program)
+
+Linkare dinamică la run-time:
+
