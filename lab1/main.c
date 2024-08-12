@@ -1,5 +1,5 @@
 #include <stdio.h>
-#include "lib/mymath.h"
+#include "library/mymath.h"
 
 #define NAME "student"
 #define NR (10)

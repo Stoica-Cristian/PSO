@@ -47,4 +47,7 @@ $(LIBRARY): $(OBJS)
 clean:
 	rm -f *.o $(LIBRARY) $(TARGET)
 
-.PHONY: clean all
+clean_obj:
+	rm -f *.o
+
+.PHONY: clean clean_obj all
