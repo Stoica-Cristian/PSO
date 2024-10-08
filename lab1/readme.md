@@ -18,9 +18,12 @@ gcc main.o -o main
 
 gcc -c main.c -o main.o
 
+# Permite vizualizarea informațiilor din fișierele obiect
+objdump -M intel -d filename
+
 # Exercitiu 1
 
-Utilitarula ar (archiver) pentru a crea o biblioteca statica. Optiuni:
+Utilitarul ar (archiver) pentru a crea o biblioteca statica. Optiuni:
     r - Adaugă fișierele specificate în arhivă. Dacă arhiva nu există, aceasta va fi creată
     c - Creează arhiva, dacă aceasta nu există
     s - Creează un index (tabel de simboluri) pentru arhivă
@@ -41,6 +44,7 @@ gcc -static demo.c -o demo_static -L . -lmymath
 error: /usr/bin/ld: cannot find -lc: No such file or directory
 
 !!! Prin eliminarea -static functioneaza
+UPDATE: sudo yum install glibc-static  - biblioteca libc statica
 
 # Exercitiu 2
 
@@ -59,3 +63,5 @@ dynamic lib:
 
 Linkare dinamică la run-time:
 
+gcc main.c -ldl -o main
+LD_LIBRARY_PATH=.:$LD_LIBRARY_PATH ./main

@@ -36,7 +36,7 @@ OBJS = add.o sub.o
 all: $(TARGET)
 
 $(TARGET): $(LIBRARY) $(OBJS)
-	$(CC) $(TARGET).c -o $(TARGET) -L . -l$(LIB)
+	$(CC) -static $(TARGET).c -o $(TARGET) -L . -l$(LIB)
 
 $(LIBRARY): $(OBJS)
 	ar rcs $(LIBRARY) $(OBJS)
