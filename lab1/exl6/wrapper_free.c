@@ -12,7 +12,7 @@ void free(void* ptr)
         real_free = dlsym(RTLD_NEXT, "free");
 
         if (real_free == NULL) {
-            fprintf(stderr, "[free(void*)] - Error loading free: %s\n", dlerror());
+            fprintf(stderr, "[free(void*)] : %s\n", dlerror());
             exit(EXIT_FAILURE);
         }
     }
@@ -20,6 +20,6 @@ void free(void* ptr)
     real_free(ptr);
 
     char buffer[100];
-    int length = snprintf(buffer, sizeof(buffer), "[free(void*)] - Deallocated memory at %p\n", ptr);
+    int length = snprintf(buffer, sizeof(buffer), "[free(void*)] : Deallocated memory at %p\n", ptr);
     write(1, buffer, length);
 }
