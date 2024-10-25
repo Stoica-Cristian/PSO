@@ -203,8 +203,8 @@ int main()
 
     }
 
-    free(line);
-    free(command);
+    // free(line);
+    // free(command);
 
     exit(EXIT_SUCCESS);
 }
